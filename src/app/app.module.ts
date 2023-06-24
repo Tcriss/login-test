@@ -11,7 +11,7 @@ import { AngularFireModule } from '@angular/fire/compat';
 import { environment } from '../environments/environment';
 import { provideAuth,getAuth } from '@angular/fire/auth';
 import { provideFirestore,getFirestore } from '@angular/fire/firestore';
-import { ForgattenPwComponent } from './components/forgatten-pw/forgatten-pw.component';
+import { ForgottenPwComponent } from './components/forgatten-pw/forgotten-pw.component';
 import { VerifyEmailComponent } from './components/verify-email/verify-email.component';
 
 @NgModule({
@@ -20,7 +20,7 @@ import { VerifyEmailComponent } from './components/verify-email/verify-email.com
     LoginComponent,
     RegisterComponent,
     HomeComponent,
-    ForgattenPwComponent,
+    ForgottenPwComponent,
     VerifyEmailComponent
   ],
   imports: [

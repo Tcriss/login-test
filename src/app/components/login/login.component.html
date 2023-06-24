@@ -1,6 +1,6 @@
 <div class="login">
   <form class="form" (ngSubmit)="singIn()" [formGroup]="form">
-    <img class="mb-4" src="https://makeable.dk/wp-content/uploads/2020/09/logo_angular-1444x1536.png" alt="" width="72" height="57">
+    <img class="mb-4" src="https://makeable.dk/wp-content/uploads/2020/09/logo_angular-1444x1536.png" alt="" width="72">
     <div class="container">
       <h1 class="h3 mb-3 fw-normal">Please sign in</h1>
 
@@ -23,5 +23,6 @@
     <img class="icon" src="assets/icons/search.png" width="60px">
   </button>
   <a [routerLink]="['/register']">Don't have an account? Sing Up here</a>
+  <a [routerLink]="['/forgotten-pw']">Did you forget your password?</a>
   <p class="mt-5 mb-3 text-body-secondary">&copy; 2017–2023</p>
 </div>

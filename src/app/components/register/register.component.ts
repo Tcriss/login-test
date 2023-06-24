@@ -13,8 +13,7 @@ export class RegisterComponent {
 
   constructor(
     private fb:FormBuilder,
-    private auth: AuthService,
-    private alert:AlertsService
+    private auth: AuthService
   ){
     this.form = this.fb.group({
       email: ['', [Validators.required, Validators.email]],

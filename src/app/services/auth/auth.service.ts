@@ -88,4 +88,16 @@ export class AuthService {
       }
     })
   }
+
+  forgottenPw(email:string){
+    this.auth.sendPasswordResetEmail(email)
+    .then(() => {
+      this.alert.notify('Password Reset','An email was sent to you your mail inbos to recover your account','info');
+    })
+    .catch((error) => {
+      const errorCode = error.code;
+      const errorMessage = error.message;
+      this.alert.notify(`Something went wrong ${errorCode}`,errorMessage,'error');
+    });
+  }
 }
