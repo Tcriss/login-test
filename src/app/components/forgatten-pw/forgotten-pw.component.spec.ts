@@ -1,6 +1,6 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { ForgattenPwComponent } from './forgatten-pw.component';
+import { ForgattenPwComponent } from './forgotten-pw.component';
 
 describe('ForgattenPwComponent', () => {
   let component: ForgattenPwComponent;
