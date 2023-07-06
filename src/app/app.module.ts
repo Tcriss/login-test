@@ -13,6 +13,7 @@ import { provideAuth,getAuth } from '@angular/fire/auth';
 import { provideFirestore,getFirestore } from '@angular/fire/firestore';
 import { ForgottenPwComponent } from './components/forgatten-pw/forgotten-pw.component';
 import { VerifyEmailComponent } from './components/verify-email/verify-email.component';
+import { initializeApp,provideFirebaseApp } from '@angular/fire/app';
 
 @NgModule({
   declarations: [
