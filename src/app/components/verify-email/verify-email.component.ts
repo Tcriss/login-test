@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { AuthService } from 'src/app/services/auth/auth.service';
 
 @Component({
   selector: 'app-verify-email',
@@ -7,4 +8,7 @@ import { Component } from '@angular/core';
 })
 export class VerifyEmailComponent {
 
+  constructor(
+    private auth:AuthService,
+  ){}
 }

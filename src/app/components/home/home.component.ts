@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { Auth } from '@angular/fire/auth';
 import { AuthService } from 'src/app/services/auth/auth.service';
 
 @Component({
@@ -9,15 +8,11 @@ import { AuthService } from 'src/app/services/auth/auth.service';
 })
 export class HomeComponent implements OnInit {
 
-  constructor(
-    private auth:AuthService
-  ){}
+  constructor(private auth: AuthService){}
 
-  ngOnInit(): void {
-    this.auth.sessionState();
-  }
+  ngOnInit(): void {}
 
   logout(){
-    this.auth.singOut();
+    this.auth.logOut();
   }
 }
