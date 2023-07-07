@@ -5,14 +5,13 @@ import { LoginComponent } from "./components/login/login.component";
 import { RegisterComponent } from "./components/register/register.component";
 import { ForgottenPwComponent } from './components/forgatten-pw/forgotten-pw.component';
 import { VerifyEmailComponent } from './components/verify-email/verify-email.component';
-import { AuthService } from './services/auth/auth.service';
-import { Inject } from '@angular/core';
+import { authGuard } from './guards/auth.guard';
 
 const routes: Routes = [
   { 
     path: 'home', 
     component: HomeComponent,
-    canActivate: [() => Inject(AuthService).isLoggedIn()]
+    canActivate: [authGuard]
   },
   { 
     path: 'login', 

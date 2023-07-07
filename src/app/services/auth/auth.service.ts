@@ -4,7 +4,6 @@ import { Router } from '@angular/router';
 import { AlertsService } from '../alerts/alerts.service';
 import { GoogleAuthProvider } from "firebase/auth";
 import { BehaviorSubject, Observable } from 'rxjs';
-import { AngularFirestore } from '@angular/fire/compat/firestore';
 
 @Injectable({
   providedIn: 'root'
@@ -13,21 +12,24 @@ export class AuthService {
 
   loggedIn = new BehaviorSubject<boolean>(false);
   loggedIn$ = this.loggedIn.asObservable();
-  private user: Observable<any> | null = null;
 
   constructor(
     private auth:AngularFireAuth,
     private router:Router,
-    private alert:AlertsService,
-    private fs: AngularFirestore
-  ){}
-
-  isLoggedIn(): boolean {
-    return !!this.auth.currentUser;
+    private alert:AlertsService
+  ){
+    this.auth.onAuthStateChanged(user => {
+      if (user) {
+        this.loggedIn.next(true);
+      } else {
+        // not logged in
+        this.loggedIn.next(false);
+      } 
+    });
   }
 
-  getUser() {
-    return this.user;
+  public isLoggedIn(): boolean {
+    return !!this.auth.currentUser;
   }
 
   singIn(email: string, password: string){
